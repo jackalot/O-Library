@@ -14,8 +14,7 @@ function addBookToLibrary (titleI, descI, authI) {
     myLibrary.push(newBook);
 }
 function displayBook () {
-    
-    for (let index = 0; index < myLibrary.length; index++) {
+    for (let index = 0; index < array.length; index++) {
         const element = array[index];
         
     }
