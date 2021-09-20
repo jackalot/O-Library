@@ -9,8 +9,16 @@ function Book(title, description, author) {
     this.description = description;
     this.author = author;
 }
+const addBookBtn = document.querySelector("#Add-Book")
+addBookBtn.addEventListener("click", () => {
+    const titleI = document.querySelector(".title").textContent;
+    const descI = document.querySelector(".description").textContent;
+    const authI = document.querySelector(".author").textContent;
+    addBookToLibrary(titleI, descI, authI);
+})
 //I stands for input
 function addBookToLibrary (titleI, descI, authI) {
+    console.log(titleI, descI, authI);
     let newBook = Object.create(Book);
     newBook.title = titleI;
     newBook.description = descI;
