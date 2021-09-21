@@ -58,6 +58,20 @@ function displayBook () {
         p.classList.add("description");
         p.textContent = bookObj.description;
         div.append(p);
+        const readBtn = document.createElement("button");
+        readBtn.textContent = "Read?";
+        if(myLibrary[index].read === true)
+        {
+            readBtn.classList.add("have-read");
+        }
+        else
+        {
+            readBtn.classList.add("have-not-read");
+        }
+        readBtn.addEventListener('click', () => {
+            readBook();
+        })
+        div.append(readBtn); 
         const delbtn = document.createElement("button");
         delbtn.textContent = "Delete Book";
         delbtn.addEventListener('click', () => {
@@ -65,6 +79,9 @@ function displayBook () {
         });
         div.append(delbtn);
     }
+}
+function readBook(index) {
+
 }
 function deleteBook (index) {
     let newArr = [];
