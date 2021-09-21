@@ -55,6 +55,6 @@ function displayBook () {
     }
 }
 function deleteBook (index) {
-console.log(index);
-console.log(myLibrary[index]);
+    console.log(myLibrary[index]);
+    console.log(index);
 }
