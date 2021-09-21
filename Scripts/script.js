@@ -55,10 +55,16 @@ function displayBook () {
     }
 }
 function deleteBook (index) {
-    for( key in myLibrary[index]) {
-        delete key;
+    let newArr = [];
+    for (let i = 0; i < myLibrary.length; i++) {
+        if(i === index)
+        {
+            continue;
+        }
+        else
+        {
+            newArr.push(myLibrary[i]);
+        }
     }
-    delete myLibrary[index];
-    console.log(myLibrary[index])
-    console.log(myLibrary);
+    console.log(newArr);
 }
