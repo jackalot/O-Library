@@ -26,14 +26,14 @@ function addBookToLibrary (titleI, descI, authI) {
     myLibrary.push(newBook);
     displayBook();
 }
-const body = document.querySelector("body");
+const bookDiv = document.querySelector(".books");
 function displayBook () {
     for (let index = 0; index < myLibrary.length; index++) {
         const bookObj = myLibrary[index];
         const div = document.createElement("div");
         div.classList.add("Book");
         div.id = `${bookObj.title}`;
-        body.append(div);
+        bookDiv.append(div);
         const h2 = document.createElement("h2");
         h2.classList.add("title");
         h2.textContent = bookObj.title;
