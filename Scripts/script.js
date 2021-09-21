@@ -22,6 +22,10 @@ addBookBtn.addEventListener("click", () => {
         readI = true;
         console.log(readI)
     }
+    else
+    {
+        readI = false;
+    }
     addBookToLibrary(titleI, descI, authI, readI);
 })
 //I stands for input
@@ -71,7 +75,7 @@ function displayBook () {
             readBtn.classList.add("have-read");
             readBtn.textContent = "Have Read, click to change";
         }
-        else
+        else if(myLibrary[index].read === false)
         {
             readBtn.classList.add("have-not-read");
             readBtn.textContent = "Have Not Read, click to change";
