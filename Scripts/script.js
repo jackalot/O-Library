@@ -4,10 +4,11 @@ let myLibrary = [{
     author: "this is a author",
 }];
 
-function Book(title, description, author) {
+function Book(title, description, author, read) {
     this.title = title;
     this.description = description;
     this.author = author;
+    this.read = read;
 }
 const addBookBtn = document.querySelector("#Add-Book")
 addBookBtn.addEventListener("click", () => {
