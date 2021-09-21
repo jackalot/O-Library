@@ -80,12 +80,13 @@ function displayBook () {
             readBook();
         })
         div.append(readBtn); 
-        const delbtn = document.createElement("button");
-        delbtn.textContent = "Delete Book";
-        delbtn.addEventListener('click', () => {
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete Book";
+        delBtn.classList.add("delete-button")
+        delBtn.addEventListener('click', () => {
             deleteBook(index); 
         });
-        div.append(delbtn);
+        div.append(delBtn);
     }
 }
 function readBook(index) {
