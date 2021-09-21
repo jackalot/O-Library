@@ -98,6 +98,7 @@ function readBook(index) {
     {
         myLibrary[index].read = true;
     }
+    clearBooks();
 }
 function deleteBook (index) {
     let newArr = [];

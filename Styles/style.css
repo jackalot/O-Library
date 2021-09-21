@@ -13,3 +13,9 @@ justify-content: flex-start;
 background-color: red;
 border-color: black;
 }
+.have-read {
+    background-color: green;
+}
+.have-not-read {
+    background-color: yellow;
+}
