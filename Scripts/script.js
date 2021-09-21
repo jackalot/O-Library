@@ -18,7 +18,7 @@ addBookBtn.addEventListener("click", () => {
 })
 //I stands for input
 function addBookToLibrary (titleI, descI, authI) {
-    console.log(titleI, descI, authI);
+    //console.log(titleI, descI, authI);
     let newBook = Object.create(Book);
     newBook.title = titleI;
     newBook.description = descI;
@@ -46,5 +46,15 @@ function displayBook () {
         p.classList.add("description");
         p.textContent = bookObj.description;
         div.append(p);
+        const delbtn = document.createElement("button");
+        delbtn.textContent = "Delete Book";
+        delbtn.addEventListener('click', () => {
+            deleteBook(index); 
+        });
+        div.append(delbtn);
     }
+}
+function deleteBook (index) {
+console.log(index);
+console.log(myLibrary[index]);
 }
