@@ -16,15 +16,22 @@ addBookBtn.addEventListener("click", () => {
     const titleI = document.querySelector(".title-input").value;
     const descI = document.querySelector(".description-input").value;
     const authI = document.querySelector(".author-input").value;
-    addBookToLibrary(titleI, descI, authI);
+    let readI = document.querySelector(".read-input").value; //reads on or off
+    if(readI === "on")
+    {
+        readI = true;
+        console.log(readI)
+    }
+    addBookToLibrary(titleI, descI, authI, readI);
 })
 //I stands for input
-function addBookToLibrary (titleI, descI, authI) {
+function addBookToLibrary (titleI, descI, authI, readI) {
     //console.log(titleI, descI, authI);
     let newBook = Object.create(Book);
     newBook.title = titleI;
     newBook.description = descI;
     newBook.author = authI;
+    newBook.read = readI;
     myLibrary.push(newBook);
     clearBooks();
 }
@@ -60,14 +67,15 @@ function displayBook () {
         p.textContent = bookObj.description;
         div.append(p);
         const readBtn = document.createElement("button");
-        readBtn.textContent = "Read?";
         if(myLibrary[index].read === true)
         {
             readBtn.classList.add("have-read");
+            readBtn.textContent = "Have Read, click to change";
         }
         else
         {
             readBtn.classList.add("have-not-read");
+            readBtn.textContent = "Have Not Read, click to change";
         }
         readBtn.addEventListener('click', () => {
             readBook();
