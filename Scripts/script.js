@@ -11,9 +11,9 @@ function Book(title, description, author) {
 }
 const addBookBtn = document.querySelector("#Add-Book")
 addBookBtn.addEventListener("click", () => {
-    const titleI = document.querySelector(".title").value;
-    const descI = document.querySelector(".description").value;
-    const authI = document.querySelector(".author").value;
+    const titleI = document.querySelector(".title-input").value;
+    const descI = document.querySelector(".description-input").value;
+    const authI = document.querySelector(".author-input").value;
     addBookToLibrary(titleI, descI, authI);
 })
 //I stands for input
