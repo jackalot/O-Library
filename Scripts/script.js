@@ -2,6 +2,7 @@ let myLibrary = [{
     title: "this is a title",
     description: "this is a description",
     author: "this is a author",
+    read: false,
 }];
 
 function Book(title, description, author, read) {
@@ -81,7 +82,14 @@ function displayBook () {
     }
 }
 function readBook(index) {
-
+    if(myLibrary[index].read === true)
+    {
+        myLibrary[index].read = false;
+    }
+    else 
+    {
+        myLibrary[index].read = true;
+    }
 }
 function deleteBook (index) {
     let newArr = [];
