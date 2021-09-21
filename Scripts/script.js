@@ -77,7 +77,7 @@ function displayBook () {
             readBtn.textContent = "Have Not Read, click to change";
         }
         readBtn.addEventListener('click', () => {
-            readBook();
+            readBook(index);
         })
         div.append(readBtn); 
         const delBtn = document.createElement("button");
