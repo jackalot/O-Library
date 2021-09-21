@@ -26,7 +26,6 @@ addBookBtn.addEventListener("click", () => {
 })
 //I stands for input
 function addBookToLibrary (titleI, descI, authI, readI) {
-    //console.log(titleI, descI, authI);
     let newBook = Object.create(Book);
     newBook.title = titleI;
     newBook.description = descI;
