@@ -11,9 +11,9 @@ function Book(title, description, author) {
 }
 const addBookBtn = document.querySelector("#Add-Book")
 addBookBtn.addEventListener("click", () => {
-    const titleI = document.querySelector(".title").textContent;
-    const descI = document.querySelector(".description").textContent;
-    const authI = document.querySelector(".author").textContent;
+    const titleI = document.querySelector(".title").value;
+    const descI = document.querySelector(".description").value;
+    const authI = document.querySelector(".author").value;
     addBookToLibrary(titleI, descI, authI);
 })
 //I stands for input
@@ -24,9 +24,9 @@ function addBookToLibrary (titleI, descI, authI) {
     newBook.description = descI;
     newBook.author = authI;
     myLibrary.push(newBook);
+    displayBook();
 }
 const body = document.querySelector("body");
-displayBook();
 function displayBook () {
     for (let index = 0; index < myLibrary.length; index++) {
         const bookObj = myLibrary[index];
