@@ -24,9 +24,20 @@ function addBookToLibrary (titleI, descI, authI) {
     newBook.description = descI;
     newBook.author = authI;
     myLibrary.push(newBook);
-    displayBook();
+    clearBooks();
 }
 const bookDiv = document.querySelector(".books");
+function clearBooks() {
+    while(bookDiv.firstChild)
+    {
+        console.log(bookDiv.firstChild);
+        bookDiv.removeChild(bookDiv.firstChild);
+    }
+   if(!bookDiv.firstChild)
+   {
+       displayBook();
+   }
+}
 function displayBook () {
     for (let index = 0; index < myLibrary.length; index++) {
         const bookObj = myLibrary[index];
@@ -66,5 +77,6 @@ function deleteBook (index) {
             newArr.push(myLibrary[i]);
         }
     }
-    console.log(newArr);
+    myLibrary = newArr.splice(0, newArr.length);
+    clearBooks();
 }
