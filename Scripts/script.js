@@ -5,11 +5,13 @@ let myLibrary = [{
     read: false,
 }];
 
-function Book(title, description, author, read) {
-    this.title = title;
-    this.description = description;
-    this.author = author;
-    this.read = read;
+class Book {
+    constructor(title, description, author, read) {
+        this.title = title;
+        this.description = description;
+        this.author = author;
+        this.read = read;
+    }
 }
 const addBookBtn = document.querySelector("#Add-Book")
 addBookBtn.addEventListener("click", () => {
@@ -30,7 +32,7 @@ addBookBtn.addEventListener("click", () => {
 })
 //I stands for input
 function addBookToLibrary (titleI, descI, authI, readI) {
-    let newBook = Object.create(Book);
+    let newBook = new Book();
     newBook.title = titleI;
     newBook.description = descI;
     newBook.author = authI;
