@@ -18,10 +18,13 @@ if(!field.checkValidity())
 {
     document.querySelector(`#error`).textContent = field.validationMessage;
 }
+else if(field.value === "")
+{
+    document.querySelector(`#error`).textContent = `please fill out the missing fields`
+}
 else
 {
-    return true
-
+    return true;
 }
 }
 const addBookBtn = document.querySelector("#Add-Book")
@@ -41,7 +44,8 @@ addBookBtn.addEventListener("click", () => {
     }
     const checkTitle =  validateFields(titleI);
     const checkDesc = validateFields(descI);
-    if(checkTitle && checkDesc)
+    const checkAuth = validateFields(authI);
+    if(checkTitle && checkDesc && checkAuth)
     {
         addBookToLibrary(titleI.value, descI.value, authI.value, readI.value);
     }
