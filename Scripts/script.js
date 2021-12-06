@@ -13,11 +13,22 @@ class Book {
         this.read = read;
     }
 }
+function validateFields (field) {
+if(!field.checkValidity())
+{
+    document.querySelector(`#error`).textContent = field.validationMessage;
+}
+else
+{
+    return true
+
+}
+}
 const addBookBtn = document.querySelector("#Add-Book")
 addBookBtn.addEventListener("click", () => {
-    const titleI = document.querySelector(".title-input").value;
-    const descI = document.querySelector(".description-input").value;
-    const authI = document.querySelector(".author-input").value;
+    const titleI = document.querySelector(".title-input");
+    const descI = document.querySelector(".description-input");
+    const authI = document.querySelector(".author-input");
     let readI = document.querySelector(".read-input").value; //reads on or off
     if(readI === "on")
     {
@@ -28,8 +39,14 @@ addBookBtn.addEventListener("click", () => {
     {
         readI = false;
     }
-    addBookToLibrary(titleI, descI, authI, readI);
+    const checkTitle =  validateFields(titleI);
+    const checkDesc = validateFields(descI);
+    if(checkTitle && checkDesc)
+    {
+        addBookToLibrary(titleI.value, descI.value, authI.value, readI.value);
+    }
 })
+
 //I stands for input
 function addBookToLibrary (titleI, descI, authI, readI) {
     let newBook = new Book();
