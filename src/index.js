@@ -18,6 +18,7 @@ class Book {
     this.read = read;
   }
 }
+// checks if the sent field is valid, if it is, it returns true
 function validateFields(field) {
   if (!field.checkValidity()) {
     document.querySelector(`#error`).textContent = field.validationMessage;
