@@ -42,10 +42,13 @@ addBookBtn.addEventListener("click", () => {
   } else {
     readI = false;
   }
+  /** Validate each field */
   const checkTitle = validateFields(titleI);
   const checkDesc = validateFields(descI);
   const checkAuth = validateFields(authI);
+  /** if either of the fields return false */
   if (checkTitle && checkDesc && checkAuth) {
+    /** calls addBookToLibrary and makes sure to call the current values */
     addBookToLibrary(titleI.value, descI.value, authI.value, readI.value);
   }
 });
