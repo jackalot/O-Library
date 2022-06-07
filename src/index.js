@@ -55,12 +55,17 @@ addBookBtn.addEventListener("click", () => {
 
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
+  /** Create a new book */
   let newBook = new Book();
+  /** Make it's values equal the parameters */
   newBook.title = titleI;
   newBook.description = descI;
   newBook.author = authI;
   newBook.read = readI;
+  /** Make sure our library array has it stored */
   myLibrary.push(newBook);
+  /** Clear all the DOM books from the bookDiv
+   * to make space for the new book! */
   clearBooks();
 }
 const bookDiv = document.querySelector(".books");
