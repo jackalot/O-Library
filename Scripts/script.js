@@ -159,12 +159,3 @@ const firebaseApp = initializeApp({
   appId: "1:1095897099758:web:d55d38cb4df72f232df2ff",
 });
 const db = getFirestore(firebaseApp);
-
-async function loadCity(name) {
-  const cityDoc = doc(db, `cities/${name}`);
-  const snapshot = await getDoc(cityDoc);
-  return {
-    id: snapshot.id,
-    ...snapshot.data(),
-  };
-}
