@@ -8,6 +8,8 @@ import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
 
 let myLibrary = [];
 
+// Our book class, it creates an object with the following properties:
+/* title, description, author, read */
 class Book {
   constructor(title, description, author, read) {
     this.title = title;
