@@ -83,7 +83,9 @@ function clearBooks() {
 //  Goes through the entire library array and creates each element needed for the book
 function displayBook() {
   for (let index = 0; index < myLibrary.length; index++) {
+    //  Reference the book object
     const bookObj = myLibrary[index];
+    //  Create a div for the book
     const div = document.createElement("div");
     div.classList.add("Book");
     div.id = `${bookObj.title}`;
