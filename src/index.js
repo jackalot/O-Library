@@ -6,14 +6,7 @@ const app = initializeApp(firebaseConfig);
 // src/index.js
 import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
 
-let myLibrary = [
-  {
-    title: "this is a title",
-    description: "this is a description",
-    author: "this is a author",
-    read: false,
-  },
-];
+let myLibrary = [];
 
 class Book {
   constructor(title, description, author, read) {
