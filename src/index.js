@@ -80,6 +80,7 @@ function clearBooks() {
     displayBook();
   }
 }
+//  Goes through the entire library array and creates each element needed for the book
 function displayBook() {
   for (let index = 0; index < myLibrary.length; index++) {
     const bookObj = myLibrary[index];
