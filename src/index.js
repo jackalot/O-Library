@@ -68,12 +68,14 @@ function addBookToLibrary(titleI, descI, authI, readI) {
    * to make space for the new book! */
   clearBooks();
 }
+//  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
 function clearBooks() {
+  // While the bookDiv has children, clear that child
   while (bookDiv.firstChild) {
-    console.log(bookDiv.firstChild);
     bookDiv.removeChild(bookDiv.firstChild);
   }
+  // If the bookDiv has no children, start displaying books instead.
   if (!bookDiv.firstChild) {
     displayBook();
   }
