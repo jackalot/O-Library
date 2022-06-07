@@ -4,7 +4,6 @@ import { initializeApp } from "firebase/app";
 const app = initializeApp(firebaseConfig);
 
 // src/index.js
-import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
 
 let myLibrary = [
