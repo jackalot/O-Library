@@ -5,7 +5,20 @@ const app = initializeApp(firebaseConfig);
 
 // src/index.js
 import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
 
+  authDomain: "o-library-c1db9.firebaseapp.com",
+
+  projectId: "o-library-c1db9",
+
+  storageBucket: "o-library-c1db9.appspot.com",
+
+  messagingSenderId: "1095897099758",
+
+  appId: "1:1095897099758:web:d55d38cb4df72f232df2ff",
+});
+const db = getFirestore(firebaseApp);
 let myLibrary = [];
 
 // Our book class, it creates an object with the following properties:
@@ -152,21 +165,3 @@ function deleteBook(index) {
   myLibrary = newArr.splice(0, newArr.length);
   clearBooks();
 }
-
-/* FireBase Setup */
-// Import the functions you need from the SDKs you need
-
-const firebaseApp = initializeApp({
-  apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
-
-  authDomain: "o-library-c1db9.firebaseapp.com",
-
-  projectId: "o-library-c1db9",
-
-  storageBucket: "o-library-c1db9.appspot.com",
-
-  messagingSenderId: "1095897099758",
-
-  appId: "1:1095897099758:web:d55d38cb4df72f232df2ff",
-});
-const db = getFirestore(firebaseApp);
