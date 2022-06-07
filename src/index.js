@@ -122,6 +122,7 @@ function displayBook() {
       readBook(index);
     });
     div.append(readBtn);
+    //  Create a delete book button if the user doesn't want this book anymore
     const delBtn = document.createElement("button");
     delBtn.textContent = "Delete Book";
     delBtn.classList.add("delete-button");
