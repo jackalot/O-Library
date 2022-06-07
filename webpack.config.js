@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./Scripts/index.js",
+  entry: "./src/index.js",
   // The Location of the build folder described above
   output: {
     path: path.resolve(__dirname, "dist"),
