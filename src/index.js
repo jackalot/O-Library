@@ -102,6 +102,8 @@ function displayBook() {
     h3.classList.add("author");
     h3.textContent = bookObj.author;
     div.append(h3);
+    //  create the description of the book,
+    //  it will be a p element
     const p = document.createElement("p");
     p.classList.add("description");
     p.textContent = bookObj.description;
