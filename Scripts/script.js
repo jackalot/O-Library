@@ -1,3 +1,12 @@
+// Your web app's Firebase configuration
+// Initialize Firebase
+import { initializeApp } from "firebase/app";
+const app = initializeApp(firebaseConfig);
+
+// src/index.js
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
+
 let myLibrary = [
   {
     title: "this is a title",
@@ -129,21 +138,6 @@ function deleteBook(index) {
 
 /* FireBase Setup */
 // Import the functions you need from the SDKs you need
-
-import { initializeApp } from "firebase/app";
-
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// Initialize Firebase
-
-const app = initializeApp(firebaseConfig);
-
-// src/index.js
-import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
