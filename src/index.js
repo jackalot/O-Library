@@ -108,6 +108,7 @@ function displayBook() {
     p.classList.add("description");
     p.textContent = bookObj.description;
     div.append(p);
+    //  Create the 'read this book' button and give it the appropiate class
     const readBtn = document.createElement("button");
     if (myLibrary[index].read === true) {
       readBtn.classList.add("have-read");
@@ -116,6 +117,7 @@ function displayBook() {
       readBtn.classList.add("have-not-read");
       readBtn.textContent = "Have Not Read, click to change";
     }
+    //  No matter what class the readBtn is, it should have this function
     readBtn.addEventListener("click", () => {
       readBook(index);
     });
