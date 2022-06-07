@@ -137,8 +137,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// Initialize Firebase
 
-const firebaseConfig = {
+const app = initializeApp(firebaseConfig);
+
+// src/index.js
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
+
+const firebaseApp = initializeApp({
   apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
 
   authDomain: "o-library-c1db9.firebaseapp.com",
@@ -150,8 +157,14 @@ const firebaseConfig = {
   messagingSenderId: "1095897099758",
 
   appId: "1:1095897099758:web:d55d38cb4df72f232df2ff",
-};
+});
+const db = getFirestore(firebaseApp);
 
-// Initialize Firebase
-
-const app = initializeApp(firebaseConfig);
+async function loadCity(name) {
+  const cityDoc = doc(db, `cities/${name}`);
+  const snapshot = await getDoc(cityDoc);
+  return {
+    id: snapshot.id,
+    ...snapshot.data(),
+  };
+}
