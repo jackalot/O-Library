@@ -153,6 +153,14 @@ function listAllBooks() {
     div.id = `${bookObj.title}`;
     return div;
   }
+  function createTitle(bookObj) {
+    //  create the title element of the book,
+    //  in this case, an h2
+    const h2 = document.createElement("h2");
+    h2.classList.add("title");
+    h2.textContent = bookObj.title;
+    div.append(h2);
+  }
   function createAuthor() {}
   function createDescription() {}
   function createReadButton() {}
