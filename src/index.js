@@ -169,7 +169,14 @@ function listAllBooks() {
     h3.textContent = bookObj.author;
     return h3;
   }
-  function createDescription() {}
+  function createDescription(bookObj) {
+    //  create the description of the book,
+    //  it will be a p element
+    const p = document.createElement("p");
+    p.classList.add("description");
+    p.textContent = bookObj.description;
+    return p;
+  }
   function createReadButton() {}
   for (let index = 0; index < myLibrary.length; index++) {}
 }
