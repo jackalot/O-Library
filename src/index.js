@@ -90,7 +90,7 @@ function clearBooks() {
   }
   // If the bookDiv has no children, start displaying books instead.
   if (!bookDiv.firstChild) {
-    displayBook();
+    listAllBooks();
   }
 }
 //  Goes through the entire library array and creates each element needed for the book
