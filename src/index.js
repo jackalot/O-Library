@@ -213,6 +213,11 @@ function listAllBooks() {
     const readButton = createReadButton(bookObj, index);
     const deleteButton = createDeleteButton(index);
     bookDiv.append(bookContainer);
+    bookContainer.append(booktitle);
+    bookContainer.append(bookAuthor);
+    bookContainer.append(bookDescription);
+    bookContainer.append(readButton);
+    bookContainer.append(deleteButton);
   }
 }
 function readBook(index) {
