@@ -199,7 +199,7 @@ function listAllBooks() {
     delBtn.textContent = "Delete Book";
     delBtn.classList.add("delete-button");
     delBtn.addEventListener("click", () => {
-      deleteBook(index);
+      deleteBook(bookIndex);
     });
     return delBtn;
   }
