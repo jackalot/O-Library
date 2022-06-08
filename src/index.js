@@ -204,7 +204,7 @@ function listAllBooks() {
     readBtn.addEventListener("click", () => {
       readBook(bookIndex);
     });
-    div.append(readBtn);
+    return readBtn;
   }
   function createDeleteButton(bookIndex) {
     //  Create a delete book button if the user doesn't want this book anymore
