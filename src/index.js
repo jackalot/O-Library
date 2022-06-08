@@ -177,7 +177,22 @@ function listAllBooks() {
     p.textContent = bookObj.description;
     return p;
   }
-  function createReadButton() {}
+  function createReadButton(bookObj) {
+    //  Create the 'read this book' button and give it the appropiate class
+    const readBtn = document.createElement("button");
+    if (bookObj.read === true) {
+      readBtn.classList.add("have-read");
+      readBtn.textContent = "Have Read, click to change";
+    } else if (bookObj.read === false) {
+      readBtn.classList.add("have-not-read");
+      readBtn.textContent = "Have Not Read, click to change";
+    }
+    //  No matter what class the readBtn is, it should have this function
+    readBtn.addEventListener("click", () => {
+      readBook(index);
+    });
+    div.append(readBtn);
+  }
   for (let index = 0; index < myLibrary.length; index++) {}
 }
 function readBook(index) {
