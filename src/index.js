@@ -211,6 +211,7 @@ function listAllBooks() {
     const bookAuthor = createAuthor(bookObj);
     const bookDescription = createDescription(bookObj);
     const readButton = createReadButton(bookObj, index);
+    const deleteButton = createDeleteButton(bookObj, index);
   }
 }
 function readBook(index) {
