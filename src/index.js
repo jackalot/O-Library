@@ -212,6 +212,7 @@ function listAllBooks() {
     const bookDescription = createDescription(bookObj);
     const readButton = createReadButton(bookObj, index);
     const deleteButton = createDeleteButton(index);
+    bookDiv.append(bookContainer);
   }
 }
 function readBook(index) {
