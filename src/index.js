@@ -177,7 +177,7 @@ function listAllBooks() {
     p.textContent = bookObj.description;
     return p;
   }
-  function createReadButton(bookObj) {
+  function createReadButton(bookObj, bookIndex) {
     //  Create the 'read this book' button and give it the appropiate class
     const readBtn = document.createElement("button");
     if (bookObj.read === true) {
@@ -189,7 +189,7 @@ function listAllBooks() {
     }
     //  No matter what class the readBtn is, it should have this function
     readBtn.addEventListener("click", () => {
-      readBook(index);
+      readBook(bookIndex);
     });
     div.append(readBtn);
   }
