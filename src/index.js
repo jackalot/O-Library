@@ -207,6 +207,7 @@ function listAllBooks() {
     //  Reference the book object
     const bookObj = myLibrary[index];
     const bookDiv = createBookDiv(bookObj);
+    const booktitle = createTitle(bookObj);
   }
 }
 function readBook(index) {
