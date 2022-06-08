@@ -151,9 +151,8 @@ function listAllBooks() {
     const div = document.createElement("div");
     div.classList.add("Book");
     div.id = `${bookObj.title}`;
-    bookDiv.append(div);
+    return div;
   }
-  function createTitle() {}
   function createAuthor() {}
   function createDescription() {}
   function createReadButton() {}
