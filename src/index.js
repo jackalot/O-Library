@@ -146,7 +146,13 @@ function displayBook() {
   }
 }
 function listAllBooks() {
-  function createBookDiv() {}
+  function createBookDiv(bookObj) {
+    //  Create a div for the book
+    const div = document.createElement("div");
+    div.classList.add("Book");
+    div.id = `${bookObj.title}`;
+    bookDiv.append(div);
+  }
   function createTitle() {}
   function createAuthor() {}
   function createDescription() {}
