@@ -150,6 +150,7 @@ function listAllBooks() {
   function createAuthor() {}
   function createDescription() {}
   function createReadButton() {}
+  for (let index = 0; index < myLibrary.length; index++) {}
 }
 function readBook(index) {
   if (myLibrary[index].read === true) {
