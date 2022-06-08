@@ -193,7 +193,7 @@ function listAllBooks() {
     });
     div.append(readBtn);
   }
-  function createDeleteButton(bookObj, bookIndex) {
+  function createDeleteButton(bookIndex) {
     //  Create a delete book button if the user doesn't want this book anymore
     const delBtn = document.createElement("button");
     delBtn.textContent = "Delete Book";
@@ -211,7 +211,7 @@ function listAllBooks() {
     const bookAuthor = createAuthor(bookObj);
     const bookDescription = createDescription(bookObj);
     const readButton = createReadButton(bookObj, index);
-    const deleteButton = createDeleteButton(bookObj, index);
+    const deleteButton = createDeleteButton(index);
   }
 }
 function readBook(index) {
