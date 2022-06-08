@@ -146,7 +146,7 @@ function displayBook() {
   }
 }
 function listAllBooks() {
-  function createBookDiv(bookObj) {
+  function createBookContainer(bookObj) {
     //  Create a div for the book
     const div = document.createElement("div");
     div.classList.add("Book");
@@ -206,7 +206,7 @@ function listAllBooks() {
   for (let index = 0; index < myLibrary.length; index++) {
     //  Reference the book object
     const bookObj = myLibrary[index];
-    const bookDiv = createBookDiv(bookObj);
+    const bookContainer = createBookContainer(bookObj);
     const booktitle = createTitle(bookObj);
     const bookAuthor = createAuthor(bookObj);
     const bookDescription = createDescription(bookObj);
