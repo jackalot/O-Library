@@ -146,6 +146,7 @@ function displayBook() {
   }
 }
 function listAllBooks() {
+  function createBookDiv() {}
   function createTitle() {}
   function createAuthor() {}
   function createDescription() {}
