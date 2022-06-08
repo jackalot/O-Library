@@ -145,7 +145,9 @@ function displayBook() {
     div.append(delBtn);
   }
 }
-function listAllBooks() {}
+function listAllBooks() {
+  function createTitle() {}
+}
 function readBook(index) {
   if (myLibrary[index].read === true) {
     myLibrary[index].read = false;
