@@ -61,12 +61,13 @@ addBookBtn.addEventListener("click", () => {
   const titleI = document.querySelector(".title-input");
   const descI = document.querySelector(".description-input");
   const authI = document.querySelector(".author-input");
-  let readI = document.querySelector(".read-input").value; //reads on or off
-  if (readI === "on") {
-    readI = true;
-    console.log(readI);
+  const readI = document.querySelector(".read-input"); //reads on or off
+  let readValue;
+  if (readI.value === "on") {
+    readValue = true;
+    console.log(readValue);
   } else {
-    readI = false;
+    readValue = false;
   }
   /** Validate each field */
   const checkTitle = validateFields(titleI);
@@ -75,7 +76,7 @@ addBookBtn.addEventListener("click", () => {
   /** if either of the fields return false */
   if (checkTitle && checkDesc && checkAuth) {
     /** calls addBookToLibrary and makes sure to call the current values */
-    addBookToLibrary(titleI.value, descI.value, authI.value, readI.value);
+    addBookToLibrary(titleI.value, descI.value, authI.value, readValue);
   }
 });
 
