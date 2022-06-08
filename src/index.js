@@ -209,6 +209,7 @@ function listAllBooks() {
     const bookDiv = createBookDiv(bookObj);
     const booktitle = createTitle(bookObj);
     const bookAuthor = createAuthor(bookObj);
+    const bookDescription = createDescription(bookObj);
   }
 }
 function readBook(index) {
