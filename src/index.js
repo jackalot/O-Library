@@ -210,6 +210,7 @@ function listAllBooks() {
     const booktitle = createTitle(bookObj);
     const bookAuthor = createAuthor(bookObj);
     const bookDescription = createDescription(bookObj);
+    const createReadButton = createReadButton(bookObj, index);
   }
 }
 function readBook(index) {
