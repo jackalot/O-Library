@@ -203,7 +203,10 @@ function listAllBooks() {
     });
     return delBtn;
   }
-  for (let index = 0; index < myLibrary.length; index++) {}
+  for (let index = 0; index < myLibrary.length; index++) {
+    //  Reference the book object
+    const bookObj = myLibrary[index];
+  }
 }
 function readBook(index) {
   if (myLibrary[index].read === true) {
