@@ -147,6 +147,9 @@ function displayBook() {
 }
 function listAllBooks() {
   function createTitle() {}
+  function createAuthor() {}
+  function createDescription() {}
+  function createReadButton() {}
 }
 function readBook(index) {
   if (myLibrary[index].read === true) {
