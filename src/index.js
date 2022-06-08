@@ -193,6 +193,16 @@ function listAllBooks() {
     });
     div.append(readBtn);
   }
+  function createDeleteButton(bookObj, bookIndex) {
+    //  Create a delete book button if the user doesn't want this book anymore
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete Book";
+    delBtn.classList.add("delete-button");
+    delBtn.addEventListener("click", () => {
+      deleteBook(index);
+    });
+    return delBtn;
+  }
   for (let index = 0; index < myLibrary.length; index++) {}
 }
 function readBook(index) {
