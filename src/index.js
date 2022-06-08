@@ -1,6 +1,19 @@
 // Your web app's Firebase configuration
 // Initialize Firebase
 import { initializeApp } from "firebase/app";
+const firebaseConfig = {
+  apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
+
+  authDomain: "o-library-c1db9.firebaseapp.com",
+
+  projectId: "o-library-c1db9",
+
+  storageBucket: "o-library-c1db9.appspot.com",
+
+  messagingSenderId: "1095897099758",
+
+  appId: "1:1095897099758:web:d55d38cb4df72f232df2ff",
+};
 const app = initializeApp(firebaseConfig);
 
 // src/index.js
