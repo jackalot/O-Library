@@ -208,6 +208,7 @@ function listAllBooks() {
     const bookObj = myLibrary[index];
     const bookDiv = createBookDiv(bookObj);
     const booktitle = createTitle(bookObj);
+    const bookAuthor = createAuthor(bookObj);
   }
 }
 function readBook(index) {
