@@ -206,12 +206,14 @@ function listAllBooks() {
   for (let index = 0; index < myLibrary.length; index++) {
     //  Reference the book object
     const bookObj = myLibrary[index];
+    /* create the container, and elmements */
     const bookContainer = createBookContainer(bookObj);
     const booktitle = createTitle(bookObj);
     const bookAuthor = createAuthor(bookObj);
     const bookDescription = createDescription(bookObj);
     const readButton = createReadButton(bookObj, index);
     const deleteButton = createDeleteButton(index);
+    /* append the elements */
     bookDiv.append(bookContainer);
     bookContainer.append(booktitle);
     bookContainer.append(bookAuthor);
