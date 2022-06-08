@@ -107,57 +107,6 @@ function clearBooks() {
   }
 }
 //  Goes through the entire library array and creates each element needed for the book
-function displayBook() {
-  for (let index = 0; index < myLibrary.length; index++) {
-    //  Reference the book object
-    const bookObj = myLibrary[index];
-    //  Create a div for the book
-    const div = document.createElement("div");
-    div.classList.add("Book");
-    div.id = `${bookObj.title}`;
-    bookDiv.append(div);
-    //  create the title element of the book,
-    //  in this case, an h2
-    const h2 = document.createElement("h2");
-    h2.classList.add("title");
-    h2.textContent = bookObj.title;
-    div.append(h2);
-    //  create the author element of the book,
-    //  in this case, an h3
-    const h3 = document.createElement("h3");
-    h3.classList.add("author");
-    h3.textContent = bookObj.author;
-    div.append(h3);
-    //  create the description of the book,
-    //  it will be a p element
-    const p = document.createElement("p");
-    p.classList.add("description");
-    p.textContent = bookObj.description;
-    div.append(p);
-    //  Create the 'read this book' button and give it the appropiate class
-    const readBtn = document.createElement("button");
-    if (myLibrary[index].read === true) {
-      readBtn.classList.add("have-read");
-      readBtn.textContent = "Have Read, click to change";
-    } else if (myLibrary[index].read === false) {
-      readBtn.classList.add("have-not-read");
-      readBtn.textContent = "Have Not Read, click to change";
-    }
-    //  No matter what class the readBtn is, it should have this function
-    readBtn.addEventListener("click", () => {
-      readBook(index);
-    });
-    div.append(readBtn);
-    //  Create a delete book button if the user doesn't want this book anymore
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "Delete Book";
-    delBtn.classList.add("delete-button");
-    delBtn.addEventListener("click", () => {
-      deleteBook(index);
-    });
-    div.append(delBtn);
-  }
-}
 function listAllBooks() {
   function createBookContainer(bookObj) {
     //  Create a div for the book
@@ -193,6 +142,7 @@ function listAllBooks() {
   function createReadButton(bookObj, bookIndex) {
     //  Create the 'read this book' button and give it the appropiate class
     const readBtn = document.createElement("button");
+    console.log(bookObj);
     if (bookObj.read === true) {
       readBtn.classList.add("have-read");
       readBtn.textContent = "Have Read, click to change";
