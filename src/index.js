@@ -17,7 +17,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // src/index.js
-import { getFirestore, doc, getDoc, collection } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  collection,
+  addDoc,
+} from "firebase/firestore/lite";
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
 
@@ -98,8 +104,7 @@ function addBookToLibrary(titleI, descI, authI, readI) {
 }
 /* fill the library array with Book objects */
 function fillLibrary() {
-  const booksColl = collection(db, "books");
-  console.log(booksColl);
+  console.log("added book");
 }
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
