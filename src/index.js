@@ -95,6 +95,13 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   newBook.description = descI;
   newBook.author = authI;
   newBook.read = readI;
+  /** push the book to fireStore */
+  addDoc(collection(db, "books"), {
+    titleInput: myLibrary[0].title,
+    descriptionInput: myLibrary[0].description,
+    authorInput: myLibrary[0].author,
+    readInput: myLibrary[0].read,
+  });
   /** Make sure our library array has it stored */
   myLibrary.push(newBook);
   /** Clear all the DOM books from the bookDiv
@@ -104,13 +111,6 @@ function addBookToLibrary(titleI, descI, authI, readI) {
 }
 /* fill the library array with Book objects */
 function fillLibrary() {
-  /** push the book to fireStore */
-  addDoc(collection(db, "books"), {
-    titleInput: myLibrary[0].title,
-    descriptionInput: myLibrary[0].description,
-    authorInput: myLibrary[0].author,
-    readInput: myLibrary[0].read,
-  });
   console.log("added book");
 }
 //  Store a reference to where we display the books
