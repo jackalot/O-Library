@@ -1,7 +1,6 @@
 // Your web app's Firebase configuration
 // Initialize Firebase
 import { initializeApp } from "firebase/app";
-import "style.css";
 const firebaseConfig = {
   apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
 
