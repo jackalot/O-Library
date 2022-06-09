@@ -85,7 +85,7 @@ addBookBtn.addEventListener("click", () => {
     addBookToLibrary(titleI.value, descI.value, authI.value, readValue);
   }
 });
-/* fill the myLibrary array with Book objects */
+/* fill the myLibrary array with Book objects before adding more books*/
 function fillMyLibrary() {
   console.log("added book");
 }
