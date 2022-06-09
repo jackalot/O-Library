@@ -104,6 +104,7 @@ function addBookToLibrary(titleI, descI, authI, readI) {
 }
 /* fill the library array with Book objects */
 function fillLibrary() {
+  /** push the book to fireStore */
   addDoc(collection(db, "books"), {
     titleInput: myLibrary[0].title,
     descriptionInput: myLibrary[0].description,
