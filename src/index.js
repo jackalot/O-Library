@@ -33,6 +33,7 @@ const firebaseApp = initializeApp({
 });
 const db = getFirestore(firebaseApp);
 let myLibrary = [];
+import { getStorage, ref } from "firebase/storage";
 
 // Our book class, it creates an object with the following properties:
 /* title, description, author, read */
