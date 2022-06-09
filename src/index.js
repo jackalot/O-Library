@@ -85,7 +85,10 @@ addBookBtn.addEventListener("click", () => {
     addBookToLibrary(titleI.value, descI.value, authI.value, readValue);
   }
 });
-
+/* fill the myLibrary array with Book objects */
+function fillMyLibrary() {
+  console.log("added book");
+}
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
   /** Create a new book */
@@ -106,12 +109,7 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   myLibrary.push(newBook);
   /** Clear all the DOM books from the bookDiv
    * to make space for the new book! */
-  fillLibrary();
   clearBooks();
-}
-/* fill the library array with Book objects */
-function fillLibrary() {
-  console.log("added book");
 }
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
