@@ -96,6 +96,8 @@ function addBookToLibrary(titleI, descI, authI, readI) {
    * to make space for the new book! */
   clearBooks();
 }
+/* fill the library array with Book objects */
+function fillLibrary() {}
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
 function clearBooks() {
