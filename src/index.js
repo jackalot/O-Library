@@ -104,6 +104,12 @@ function addBookToLibrary(titleI, descI, authI, readI) {
 }
 /* fill the library array with Book objects */
 function fillLibrary() {
+  addDoc(collection(db, "books"), {
+    titleInput: myLibrary[0].title,
+    descriptionInput: myLibrary[0].description,
+    authorInput: myLibrary[0].author,
+    readInput: myLibrary[0].read,
+  });
   console.log("added book");
 }
 //  Store a reference to where we display the books
