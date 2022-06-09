@@ -66,7 +66,6 @@ addBookBtn.addEventListener("click", () => {
   let readValue;
   if (readI.value === "on") {
     readValue = true;
-    console.log(readValue);
   } else {
     readValue = false;
   }
@@ -94,11 +93,13 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   myLibrary.push(newBook);
   /** Clear all the DOM books from the bookDiv
    * to make space for the new book! */
+  fillLibrary();
   clearBooks();
 }
 /* fill the library array with Book objects */
 function fillLibrary() {
   const booksColl = collection(db, "books");
+  console.log(booksColl);
 }
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
@@ -148,7 +149,6 @@ function listAllBooks() {
   function createReadButton(bookObj, bookIndex) {
     //  Create the 'read this book' button and give it the appropiate class
     const readBtn = document.createElement("button");
-    console.log(bookObj);
     if (bookObj.read === true) {
       readBtn.classList.add("have-read");
       readBtn.textContent = "Have Read, click to change";
