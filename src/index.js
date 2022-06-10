@@ -90,9 +90,10 @@ async function fillMyLibrary() {
   const reference = db.collection("books");
   const snapshot = await reference.get();
   snapshot.foreach((doc) => {
-    console.log(doc.id, "=>", doc.data());
+    myLibrary.push(doc);
   });
   console.log("fillMyLibrary is called");
+  console.log(myLibrary);
 }
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
