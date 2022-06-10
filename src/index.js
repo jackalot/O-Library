@@ -85,7 +85,7 @@ addBookBtn.addEventListener("click", () => {
 });
 /* fill the myLibrary array with Book objects before adding more books*/
 async function fillMyLibrary() {
-  const reference = getDoc(db.collection("books"));
+  const reference = getDoc(collection(db, "books"));
   const snapshot = await reference.get();
   snapshot.foreach((doc) => {
     myLibrary.push(doc);
