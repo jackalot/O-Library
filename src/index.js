@@ -19,6 +19,7 @@ const app = initializeApp(firebaseConfig);
 import {
   getFirestore,
   getDoc,
+  getDocs,
   collection,
   addDoc,
 } from "firebase/firestore/lite";
@@ -85,7 +86,7 @@ addBookBtn.addEventListener("click", () => {
 });
 /* fill the myLibrary array with Book objects before adding more books*/
 async function fillMyLibrary() {
-  const reference = getDoc(collection(db, "books"));
+  const reference = getDocs(collection(db, "books"));
   const snapshot = await reference.get();
   snapshot.foreach((doc) => {
     myLibrary.push(doc);
