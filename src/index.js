@@ -86,8 +86,13 @@ addBookBtn.addEventListener("click", () => {
   }
 });
 /* fill the myLibrary array with Book objects before adding more books*/
-function fillMyLibrary() {
-  console.log("added book");
+async function fillMyLibrary() {
+  const reference = db.collection("books");
+  const snapshot = await reference.get();
+  snapshot.foreach((doc) => {
+    console.log(doc.id, "=>", doc.data());
+  });
+  console.log("fillMyLibrary is called");
 }
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
@@ -109,7 +114,8 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   myLibrary.push(newBook);
   /** Clear all the DOM books from the bookDiv
    * to make space for the new book! */
-  clearBooks();
+  //clearBooks();
+  fillMyLibrary();
 }
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
