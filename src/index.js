@@ -15,11 +15,9 @@ const firebaseConfig = {
   appId: "1:1095897099758:web:d55d38cb4df72f232df2ff",
 };
 const app = initializeApp(firebaseConfig);
-
 // src/index.js
 import {
   getFirestore,
-  doc,
   getDoc,
   collection,
   addDoc,
@@ -87,7 +85,7 @@ addBookBtn.addEventListener("click", () => {
 });
 /* fill the myLibrary array with Book objects before adding more books*/
 async function fillMyLibrary() {
-  const reference = db.collection("books");
+  const reference = getDoc(db.collection("books"));
   const snapshot = await reference.get();
   snapshot.foreach((doc) => {
     myLibrary.push(doc);
