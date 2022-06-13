@@ -94,16 +94,20 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   newBook.descriptionInput = descI;
   newBook.authorInput = authI;
   newBook.readInput = readI;
-  /** push the book to fireStore collection */
-  addDoc(collection(db, "books"), {
-    titleInput: titleI,
-    descriptionInput: descI,
-    authorInput: authI,
-    readInput: readI,
-  });
-  /** Make sure our library array has it stored */
-  myLibrary.push(newBook);
-  fillMyLibrary();
+  const index = findSimilarBook(newBook);
+  //  if the book is not there, then we won't be adding duplicate books
+  if (index === -1) {
+    /** push the book to fireStore collection */
+    addDoc(collection(db, "books"), {
+      titleInput: titleI,
+      descriptionInput: descI,
+      authorInput: authI,
+      readInput: readI,
+    });
+    /** Make sure our library array has it stored */
+    myLibrary.push(newBook);
+    fillMyLibrary();
+  }
 }
 /* Tries to find a similar object to our bookObj thats
    recieved in the myLibrary array */
