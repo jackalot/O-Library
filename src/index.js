@@ -45,10 +45,10 @@ const storage = getStorage();
 /* title, description, author, read */
 class Book {
   constructor(title, description, author, read) {
-    this.title = title;
-    this.description = description;
-    this.author = author;
-    this.read = read;
+    this.titleInput = title;
+    this.descriptionInput = description;
+    this.authorInput = author;
+    this.readInput = read;
   }
 }
 // checks if the sent field is valid, if it is, it returns true
@@ -90,10 +90,10 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   /** Create a new book */
   let newBook = new Book();
   /** Make it's values equal the parameters */
-  newBook.title = titleI;
-  newBook.description = descI;
-  newBook.author = authI;
-  newBook.read = readI;
+  newBook.titleInput = titleI;
+  newBook.descriptionInput = descI;
+  newBook.authorInput = authI;
+  newBook.readInput = readI;
   /** push the book to fireStore collection */
   addDoc(collection(db, "books"), {
     titleInput: titleI,
