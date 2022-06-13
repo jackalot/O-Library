@@ -112,13 +112,7 @@ async function fillMyLibrary() {
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    const bookObj = {
-      titleInput: doc.data.titleInput,
-      descriptionInput: doc.data.descriptionInput,
-      authorInput: doc.data.authorInput,
-      readInput: doc.data.readInput,
-    };
-    console.log(bookObj);
+    const bookObj = doc.data();
     myLibrary.push(bookObj);
   });
   /** Clear all the DOM books from the bookDiv
