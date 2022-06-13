@@ -111,6 +111,13 @@ function findSimilarBook(bookObj) {
   let index = -1;
   for (let i = 0; i < myLibrary.length; i++) {
     const libraryObj = myLibrary[i];
+    if (
+      bookObj.titleInput === libraryObj.titleInput &&
+      bookObj.authorInput === libraryObj.authorInput &&
+      bookObj.descriptionInput === libraryObj.descriptionInput
+    ) {
+      index = i;
+    }
   }
   return index;
 }
