@@ -85,19 +85,6 @@ addBookBtn.addEventListener("click", () => {
     addBookToLibrary(titleI.value, descI.value, authI.value, readValue);
   }
 });
-/* fill the myLibrary array with Book objects before adding more books*/
-async function fillMyLibrary() {
-  const q = query(collection(db, "books"));
-
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
-  /** Clear all the DOM books from the bookDiv
-   * to make space for the new book! */
-  clearBooks();
-}
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
   /** Create a new book */
@@ -117,6 +104,19 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   /** Make sure our library array has it stored */
   myLibrary.push(newBook);
   fillMyLibrary();
+}
+/* fill the myLibrary array with Book objects before adding more books*/
+async function fillMyLibrary() {
+  const q = query(collection(db, "books"));
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+  /** Clear all the DOM books from the bookDiv
+   * to make space for the new book! */
+  clearBooks();
 }
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
