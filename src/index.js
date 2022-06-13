@@ -105,7 +105,8 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   myLibrary.push(newBook);
   fillMyLibrary();
 }
-/* fill the myLibrary array with Book objects before clearing books*/
+/* fill the myLibrary array with Book objects before clearing books,
+   these books come from our firebase, firestore database!*/
 async function fillMyLibrary() {
   const q = query(collection(db, "books"));
 
