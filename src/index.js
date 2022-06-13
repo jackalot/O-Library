@@ -117,7 +117,8 @@ async function fillMyLibrary() {
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     const bookObj = doc.data();
-
+    // check if this bookObj is already in the myLibrary array
+    const index = findSimilarBook(bookObj);
     myLibrary.push(bookObj);
   });
   console.log(myLibrary);
