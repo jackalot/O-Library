@@ -105,6 +105,9 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   myLibrary.push(newBook);
   fillMyLibrary();
 }
+/* Tries to find a similar object to our bookObj thats
+   recieved in the myLibrary array */
+function findSimilarBook() {}
 /* fill the myLibrary array with Book objects before clearing books,
    these books come from our firebase, firestore database!*/
 async function fillMyLibrary() {
@@ -114,6 +117,7 @@ async function fillMyLibrary() {
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     const bookObj = doc.data();
+
     myLibrary.push(bookObj);
   });
   console.log(myLibrary);
