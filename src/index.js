@@ -109,7 +109,9 @@ function addBookToLibrary(titleI, descI, authI, readI) {
    recieved in the myLibrary array */
 function findSimilarBook(bookObj) {
   let index = -1;
-  for (let i = 0; i < myLibrary.length; i++) {}
+  for (let i = 0; i < myLibrary.length; i++) {
+    const libraryObj = myLibrary[i];
+  }
   return index;
 }
 /* fill the myLibrary array with Book objects before clearing books,
