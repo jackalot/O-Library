@@ -107,7 +107,7 @@ function addBookToLibrary(titleI, descI, authI, readI) {
 }
 /* Tries to find a similar object to our bookObj thats
    recieved in the myLibrary array */
-function findSimilarBook() {}
+function findSimilarBook(bookObj) {}
 /* fill the myLibrary array with Book objects before clearing books,
    these books come from our firebase, firestore database!*/
 async function fillMyLibrary() {
