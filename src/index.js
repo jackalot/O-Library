@@ -94,6 +94,9 @@ async function fillMyLibrary() {
     // doc.data() is never undefined for query doc snapshots
     console.log(doc.id, " => ", doc.data());
   });
+  /** Clear all the DOM books from the bookDiv
+   * to make space for the new book! */
+  clearBooks();
 }
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
@@ -113,9 +116,6 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   });
   /** Make sure our library array has it stored */
   myLibrary.push(newBook);
-  /** Clear all the DOM books from the bookDiv
-   * to make space for the new book! */
-  //clearBooks();
   fillMyLibrary();
 }
 //  Store a reference to where we display the books
