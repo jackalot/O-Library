@@ -115,6 +115,7 @@ async function fillMyLibrary() {
     const bookObj = doc.data();
     myLibrary.push(bookObj);
   });
+  console.log(myLibrary);
   /** Clear all the DOM books from the bookDiv
    * to make space for the new book! */
   clearBooks();
