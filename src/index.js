@@ -246,6 +246,7 @@ function readBook(index) {
   clearBooks();
 }
 function deleteBook(index) {
+  /* This section of deleteBook is for managing the myLibrary Array */
   let newArr = [];
   for (let i = 0; i < myLibrary.length; i++) {
     if (i === index) {
@@ -256,4 +257,5 @@ function deleteBook(index) {
   }
   myLibrary = newArr.splice(0, newArr.length);
   clearBooks();
+  /* This sectione of deleteBook is for managing the FireBase collection*/
 }
