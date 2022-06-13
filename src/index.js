@@ -105,7 +105,7 @@ function addBookToLibrary(titleI, descI, authI, readI) {
   myLibrary.push(newBook);
   fillMyLibrary();
 }
-/* fill the myLibrary array with Book objects before adding more books*/
+/* fill the myLibrary array with Book objects before clearing books*/
 async function fillMyLibrary() {
   const q = query(collection(db, "books"));
 
