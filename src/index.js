@@ -19,6 +19,7 @@ const app = initializeApp(firebaseConfig);
 import {
   getFirestore,
   getDoc,
+  query,
   getDocs,
   collection,
   addDoc,
@@ -86,13 +87,13 @@ addBookBtn.addEventListener("click", () => {
 });
 /* fill the myLibrary array with Book objects before adding more books*/
 async function fillMyLibrary() {
-  const reference = getDocs(collection(db, "books"));
-  const snapshot = await reference.get();
-  snapshot.foreach((doc) => {
-    myLibrary.push(doc);
+  const q = query(collection(db, "books"));
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
   });
-  console.log("fillMyLibrary is called");
-  console.log(myLibrary);
 }
 //I stands for input
 function addBookToLibrary(titleI, descI, authI, readI) {
