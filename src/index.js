@@ -120,6 +120,8 @@ async function fillMyLibrary() {
    * to make space for the new book! */
   clearBooks();
 }
+/* We want to try to load all books at least once */
+fillMyLibrary();
 //  Store a reference to where we display the books
 const bookDiv = document.querySelector(".books");
 function clearBooks() {
