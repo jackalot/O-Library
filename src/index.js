@@ -132,7 +132,9 @@ async function fillMyLibrary() {
     const bookObj = doc.data();
     // check if this bookObj is already in the myLibrary array
     const index = findSimilarBook(bookObj);
-    myLibrary.push(bookObj);
+    if (index === -1) {
+      myLibrary.push(bookObj);
+    }
   });
   console.log(myLibrary);
   /** Clear all the DOM books from the bookDiv
