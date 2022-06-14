@@ -44,6 +44,7 @@ const db = getFirestore(firebaseApp);
 let myLibrary = [];
 import { getStorage, ref } from "firebase/storage";
 const storage = getStorage();
+import "./style.css";
 // Our book class, it creates an object with the following properties:
 /* title, description, author, read */
 class Book {
