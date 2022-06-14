@@ -247,11 +247,12 @@ function readBook(index) {
   }
   clearBooks();
 }
-function deleteBook(index) {
+async function deleteBook(index) {
   /* This section of deleteBook is for managing the myLibrary Array */
   let newArr = [];
   for (let i = 0; i < myLibrary.length; i++) {
     if (i === index) {
+      await deleteDoc(doc(db, "books", myLibrary[index].titleInput));
       continue;
     } else {
       newArr.push(myLibrary[i]);
