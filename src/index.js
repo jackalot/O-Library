@@ -249,17 +249,20 @@ function readBook(index) {
   clearBooks();
 }
 async function deleteBook(index) {
-  /* This section of deleteBook is for managing the myLibrary Array */
+  // Create a new array
   let newArr = [];
   for (let i = 0; i < myLibrary.length; i++) {
+    // if we found the book we are deleting, just continue on
     if (i === index) {
+      /* This is to delete the book on firebase */
       await deleteDoc(doc(db, "books", myLibrary[index].bookId));
       continue;
     } else {
+      // push it to our new array
       newArr.push(myLibrary[i]);
     }
   }
+  // make myLibrary equal our newArray but don't make it a deep copy.
   myLibrary = newArr.splice(0, newArr.length);
   clearBooks();
-  /* This sectione of deleteBook is for managing the FireBase collection*/
 }
