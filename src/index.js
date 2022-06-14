@@ -241,11 +241,19 @@ function listAllBooks() {
     bookContainer.append(deleteButton);
   }
 }
-function readBook(index) {
+async function readBook(index) {
   if (myLibrary[index].read === true) {
     myLibrary[index].read = false;
+    const bookRef = doc(db, "cities", myLibrary[index].id);
+    await updateDoc(bookRef, {
+      readInput: false,
+    });
   } else {
     myLibrary[index].read = true;
+    const bookRef = doc(db, "cities", myLibrary[index].id);
+    await updateDoc(bookRef, {
+      readInput: true,
+    });
   }
   clearBooks();
 }
