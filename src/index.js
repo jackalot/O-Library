@@ -143,6 +143,11 @@ async function fillMyLibrary() {
     const index = findSimilarBook(bookObj);
     if (index === -1) {
       myLibrary.push(bookObj);
+    } else {
+      // if this book doesn't have a book id and it matches, add it's book id
+      if (!myLibrary[index].bookId) {
+        myLibrary[index].bookId = doc.id;
+      }
     }
   });
   console.log(myLibrary);
