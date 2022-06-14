@@ -23,6 +23,8 @@ import {
   getDocs,
   collection,
   addDoc,
+  doc,
+  deleteDoc,
 } from "firebase/firestore/lite";
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBoNNoHhTV6YbHWxr2Bm0RCJiW9ZblD-D0",
