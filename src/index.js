@@ -242,15 +242,15 @@ function listAllBooks() {
   }
 }
 async function readBook(index) {
-  if (myLibrary[index].read === true) {
-    myLibrary[index].read = false;
-    const bookRef = doc(db, "cities", myLibrary[index].id);
+  if (myLibrary[index].readInput === true) {
+    myLibrary[index].readInput = false;
+    const bookRef = doc(db, "books", myLibrary[index].bookId);
     await updateDoc(bookRef, {
       readInput: false,
     });
   } else {
-    myLibrary[index].read = true;
-    const bookRef = doc(db, "cities", myLibrary[index].id);
+    myLibrary[index].readInput = true;
+    const bookRef = doc(db, "books", myLibrary[index].bookId);
     await updateDoc(bookRef, {
       readInput: true,
     });
