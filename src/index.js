@@ -253,7 +253,7 @@ async function deleteBook(index) {
   let newArr = [];
   for (let i = 0; i < myLibrary.length; i++) {
     if (i === index) {
-      await deleteDoc(doc(db, "books", myLibrary[index].titleInput));
+      await deleteDoc(doc(db, "books", myLibrary[index].bookId));
       continue;
     } else {
       newArr.push(myLibrary[i]);
