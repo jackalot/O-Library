@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "./dist/bundle.js",
+        "destination": "./dist/index.html"
       }
     ]
   }
